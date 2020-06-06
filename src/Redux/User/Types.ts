@@ -1,0 +1,2 @@
+export const USER_LOGIN = "USER_LOGIN"
+export const ADD_USER_DETAILS = "ADD_USER_DETAILS"
