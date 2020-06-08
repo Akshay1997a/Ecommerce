@@ -6,17 +6,9 @@ export interface UserAction {
     payload: object
 }
 
-
-export const userLogin = (data: object): UserAction => {
-    return {
-        type: USER_LOGIN,
-        payload: data
-    }
-}
-
-export const addUserDetails = (data: object) => {
+export const addUserDetailsInStore = (data: object) : UserAction => {
     return {
         type: ADD_USER_DETAILS,
-        paylaod: data
+        payload: data
     }
 }

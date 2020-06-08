@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { secondary } from '../../Constants/Colors'
+import { colors, metrics } from '../../Style'
 
 const style = StyleSheet.create({
     container: {
@@ -7,6 +7,8 @@ const style = StyleSheet.create({
     },
     col1: {
         flex: 2,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     col2: {
         flex: 1,
@@ -16,7 +18,7 @@ const style = StyleSheet.create({
     },
     but: {
         borderRadius: 20,
-        backgroundColor: secondary,
+        backgroundColor: colors.secondary,
         overflow: 'hidden'
     },
     butText: {

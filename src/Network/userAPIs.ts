@@ -1,12 +1,8 @@
+import {AxiosResponse} from './index'
 
 export interface UserLogin {
     emailId: string,
     password: string
-}
-
-interface AxiosResponse {
-    data: object | string,
-    status: number
 }
 
 const admin: UserLogin = {
@@ -23,12 +19,12 @@ export const userLogin = (body: UserLogin): AxiosResponse => {
             }
         }
         return {
-            data: 'User not found',
+            data: {err: 'User not found'},
             status: 404,
         }
     } catch (error) {
         return {
-            data: 'User not found',
+            data: {err: 'User not found'},
             status: 404,
         }
     }

@@ -1,5 +1,7 @@
 import { registerRootComponent } from 'expo';
 
+import './src/config/StatusbarConfig';
+
 import App from './src/App';
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
