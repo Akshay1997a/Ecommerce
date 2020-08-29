@@ -28,6 +28,8 @@ Start by cloning repository and installing dependencies using yarn
 git clone
 cd ecommerce
 yarn add
+or
+npm install --save
 ```
 
 __Link assets__
@@ -45,13 +47,6 @@ cd ios && pod install
 
 <br>
 
-## Install Dependencies
-Inside Root folder type following code
-
-    npm install --save
-    or
-    yarn add
-
 ## Run Server
 
 If Json Sever is not installed. Type following command
@@ -65,6 +60,7 @@ If Json Server is already installed.
 ```shell
 json-server --watch server.json
 ```
+<br>
 
 ## Run React Application
     cd ecommerse
