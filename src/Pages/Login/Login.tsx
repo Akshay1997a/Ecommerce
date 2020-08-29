@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PureComponent } from 'react'
 import { View, Text, TextInput, NativeSyntheticEvent, TextInputChangeEventData, GestureResponderEvent } from 'react-native'
 import FontAwsome from 'react-native-vector-icons/FontAwesome'
 import style from './Login-style'
@@ -6,7 +6,7 @@ import { TouchableOpacity, TouchableNativeFeedback } from 'react-native-gesture-
 import { connect } from 'react-redux'
 import { addUserDetailsInStore } from '../../Redux/User/UserAction'
 import { userLogin, UserLogin } from '../../Network/userAPIs'
-import {AppIcon} from '../../Components/AppIcons'
+import { AppIcon } from '../../Components/AppIcons'
 
 interface Props {
     navigation: any,
@@ -20,7 +20,7 @@ interface State {
     errorMsg?: string
 }
 
-class Login extends Component<Props, State> {
+class Login extends PureComponent<Props, State> {
 
     constructor(props: any) {
         super(props)
@@ -41,14 +41,16 @@ class Login extends Component<Props, State> {
                 password: this.state.password
             }
             let res = await userLogin(body)
-            //if (res?.status !== 200) throw res?.data
+            console.log(res)
+            if (res?.status === 200) throw res.data
             this.props.userLogin(body)
             const { navigation } = this.props
             navigation.navigate("Home")
         } catch (error) {
             console.log(error)
-            this.setState({ errorMsg: error })
+            this.setState({ errorMsg: error.msg })
         }
+        //throw new Error("Error")
     }
 
     render() {

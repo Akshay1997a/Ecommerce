@@ -1,4 +1,4 @@
-import {AxiosResponse} from './index'
+import api, { AxiosResponse } from './index'
 
 export interface UserLogin {
     emailId: string,
@@ -10,21 +10,12 @@ const admin: UserLogin = {
     password: 'Admin@123'
 }
 
-export const userLogin = (body: UserLogin): AxiosResponse => {
+export const userLogin = async (body: UserLogin): Promise<AxiosResponse> => {
     try {
-        if (body.emailId === admin.emailId && body.password === admin.password) {
-            return {
-                data: body,
-                status: 200
-            }
-        }
-        return {
-            data: {err: 'User not found'},
-            status: 404,
-        }
+        return await api.post("/users", body)
     } catch (error) {
         return {
-            data: {err: 'User not found'},
+            data: { msg: 'User not found' },
             status: 404,
         }
     }

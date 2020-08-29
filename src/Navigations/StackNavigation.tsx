@@ -2,6 +2,8 @@ import 'react-native-gesture-handler'
 import React, { Component } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
+import { enableScreens } from 'react-native-screens'
+import { createNativeStackNavigator } from 'react-native-screens/native-stack'
 
 //Navigations Screen
 import GetStarted from '../Pages/GetStarted/GetStarted'
@@ -37,13 +39,16 @@ type RootStackParams = {
 class StackNavigation extends Component<Props, State>{
     constructor(props: any) {
         super(props)
+        enableScreens()
     }
 
     render() {
-        const Stack = createStackNavigator<RootStackParams>()
+        const Stack = createNativeStackNavigator<RootStackParams>()
         return (
-            <NavigationContainer>
-                <Stack.Navigator initialRouteName="Home">
+            <NavigationContainer >
+                <Stack.Navigator screenOptions={{
+                    
+                }} initialRouteName="GetStarted">
                     <Stack.Screen
                         name="GetStarted"
                         component={GetStarted}

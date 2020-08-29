@@ -4,7 +4,7 @@ import {colors, metrics} from '../../Style'
 const style = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
     },
     col1:{
         flex: 1,
