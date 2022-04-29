@@ -16,7 +16,7 @@
     "@types/react-redux": "^7.1.9",
     "@types/redux-logger": "^3.0.8",
     "@types/styled-components": "^5.1.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.2",
     "expo": "~37.0.3",
     "expo-updates": "~0.2.0",
     "react": "16.13.1",
